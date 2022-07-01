@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="ControlOfExpenses.Views.YearlyExpensesView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ControlOfExpenses.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="240" d:DesignWidth="400">
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <Label Content="Roczne zestewianie."/>
+            <Label Content="Wybierz rok z którego chcesz otrzymać zestawienie:"/>
+            <ComboBox Margin="5,0,0,0" HorizontalAlignment="Left" Width="150"
+                      ItemsSource="{Binding Years, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                      SelectedItem="{Binding SelectDate, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                      Foreground="Black" Text="Pizda"/>
+            <Label Margin="0,50,0,0" Content="Kwota wynosi:" HorizontalAlignment="Center"/>
+            <Label Margin="0,0,0,0" HorizontalAlignment="Center" 
+                   Content="{Binding Total, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

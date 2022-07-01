@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="ControlOfExpenses.Views.DailyExpenses"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ControlOfExpenses.Views"
+             mc:Ignorable="d" 
+            d:DesignHeight="240" d:DesignWidth="400">
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <Label Content="Dziennne zestewianie."/>
+            <Label Content="Wybierz dzień z którego chcesz otrzymać zestawienie:"/>
+            <DatePicker Margin="5,0,0,0" IsEnabled="True" SelectedDate="{Binding SelectDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        HorizontalAlignment="Left" Width="150" DisplayDateEnd="2100-01-01"
+                        DisplayDateStart="2000-01-01">
+            </DatePicker>
+            <Label Margin="0,50,0,0" Content="Kwota wynosi:" HorizontalAlignment="Center"/>
+            <Label Margin="0,0,0,0" HorizontalAlignment="Center" Content="{Binding Total, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+    </Grid>
+</UserControl>
